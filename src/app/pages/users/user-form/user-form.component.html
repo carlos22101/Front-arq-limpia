@@ -2,10 +2,13 @@
     <h2>{{ isEdit ? 'Editar Usuario' : 'Agregar Usuario' }}</h2>
     <form (ngSubmit)="saveUser()">
       <label>Nombre:</label>
-      <input type="text" [(ngModel)]="user.name" name="name" required />
+      <input type="text" [(ngModel)]="user.nombre" name="name" required />
   
       <label>Email:</label>
-      <input type="email" [(ngModel)]="user.email" name="email" required />
+      <input type="email" [(ngModel)]="user.correo" name="email" required />
+
+      <label>Edad:</label>
+      <input type="number" [(ngModel)]="user.edad" name="email" required />
   
       <button type="submit" class="btn btn-save">
         {{ isEdit ? 'Actualizar' : 'Guardar' }}

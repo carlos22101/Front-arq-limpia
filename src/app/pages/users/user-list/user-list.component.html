@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Lista de Usuarios</h2>
+    <h2 routerLink="/dashboard">Lista de Usuarios</h2>
     <a routerLink="/users/new" class="btn btn-add">Agregar Usuario</a>
     
     <table>
@@ -7,15 +7,17 @@
         <tr>
           <th>ID</th>
           <th>Nombre</th>
-          <th>Email</th>
+          <th>Correo</th>
+          <th>Edad</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
           <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
+          <td>{{ user.nombre }}</td>
+          <td>{{ user.correo }}</td>
+          <td>{{ user.edad }}</td>
           <td>
             <a [routerLink]="['/users/edit', user.id]" class="btn btn-edit">Editar</a>
             <button (click)="deleteUser(user.id)" class="btn btn-delete">Eliminar</button>

@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Lista de Productos</h2>
+    <h2 routerLink="/dashboard">Lista de Productos</h2>
     <a routerLink="/products/new" class="btn btn-add">Agregar Producto</a>
   
     <table>
@@ -7,6 +7,7 @@
         <tr>
           <th>ID</th>
           <th>Nombre</th>
+          <th>Descripción</th>
           <th>Precio</th>
           <th>Acciones</th>
         </tr>
@@ -14,8 +15,9 @@
       <tbody>
         <tr *ngFor="let product of products">
           <td>{{ product.id }}</td>
-          <td>{{ product.name }}</td>
-          <td>{{ product.price | currency }}</td>
+          <td>{{ product.nombre }}</td>
+          <td>{{ product.descripcion }}</td>
+          <td>{{ product.precio | currency }}</td>
           <td>
             <a [routerLink]="['/products/edit', product.id]" class="btn btn-edit">Editar</a>
             <button (click)="deleteProduct(product.id)" class="btn btn-delete">Eliminar</button>
