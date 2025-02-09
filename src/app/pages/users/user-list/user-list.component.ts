@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../core/services/user.service';
 
 @Component({
   standalone: false,
@@ -20,7 +20,6 @@ export class UserListComponent implements OnInit {
     this.userService.getUsers().subscribe(data => {
       this.users = data;
       console.log(this.users);
-      
     });
   }
 

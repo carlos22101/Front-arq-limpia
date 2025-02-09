@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../core/services/user.service';
 
 @Component({
   standalone: false,
@@ -9,7 +9,7 @@ import { UserService } from '../../../services/user.service';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-  user: any = { name: '', email: '' };
+  user: any = { nombre: '', correo: '', edad : 0 };
   isEdit: boolean = false;
 
   constructor(
